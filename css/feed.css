@@ -1,0 +1,178 @@
+#feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  grid-column-start: 3;
+  grid-column-end: 5;
+  margin: 0.5em 0;
+}
+
+.feed__item {
+  width: 100%;
+  min-width: 300px;
+  background-color: var(--primary--color);
+  border-radius: 10px;
+}
+
+.feed__image {
+  cursor: pointer;
+  object-fit: cover;
+  width: 100%;
+}
+
+.feed__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+  margin: 0.4em;
+  margin-right: 1em;
+}
+
+.feed__footer {
+  margin: 0.5em;
+}
+.feed__icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2rem;
+}
+
+.feed__icons__bookmark {
+  flex-grow: 1;
+}
+
+.feed__avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.feed__description {
+  display: inline;
+  font-weight: 300;
+}
+.feed__date {
+  font-weight: 300;
+  font-size: 0.7rem;
+}
+
+.feed__comment {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--secondary--color);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  font-weight: 300;
+}
+
+.feed__header__username:hover {
+  color: var(--secondary--color);
+}
+
+.feed__input {
+  border: 0;
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+.feed__input:focus {
+  outline: none;
+}
+
+.feed__comment__button {
+  cursor: pointer;
+  all: unset;
+  color: var(--feedButton--color);
+  padding: 0.5em;
+}
+
+.feed__comment__button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.fa-heart {
+  animation: hoverOffIcon 0.3s;
+}
+.fa-regular:hover {
+  color: var(--secondary--color);
+  transition: color 0.2s ease;
+}
+
+.fa-heart--hoverOff {
+  animation: hoverOffIcon 0.3s infinite;
+}
+
+.feed__button {
+  all: unset;
+}
+
+.feed__title {
+  font-weight: 100;
+}
+
+.feed__dropdown li {
+  list-style: none;
+  visibility: hidden;
+  opacity: 0;
+  border-radius: 0;
+  color: tomato;
+}
+
+.feed__dropdown li button {
+  all: unset;
+  cursor: pointer;
+  background-color: antiquewhite;
+}
+.feed__dropdown__button {
+  all: unset;
+  cursor: pointer;
+}
+
+.feed__dropdown li {
+  cursor: pointer;
+}
+
+.feed__dropdown__button:hover + .feed__dropdown li,
+.feed__dropdown__button:focus-within + .feed__dropdown li,
+.feed__dropdown li:hover {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s ease;
+}
+
+@keyframes hoverOffIcon {
+  50% {
+    scale: 125%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #feed {
+    grid-column: 3/6;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #feed {
+    grid-column: 2;
+    max-width: 70%;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #feed {
+    grid-column: 2;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  .feed__item {
+    min-width: 150px;
+  }
+}

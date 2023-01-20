@@ -1,0 +1,35 @@
+.user__info {
+  display: flex;
+  justify-content: center;
+  font-weight: 100;
+  font-size: 0.65em;
+  margin-bottom: 0.4em;
+}
+
+.user__header {
+  display: flex;
+  align-items: center;
+}
+
+.user__avatar__container {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin: 0.5em;
+  margin-left: 3em;
+  overflow: hidden;
+  position: relative;
+}
+
+.user__avatar {
+  background-color: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 1200px) {
+  #user {
+    display: none;
+  }
+}

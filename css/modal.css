@@ -1,0 +1,256 @@
+#modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modal__content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: var(--primary--color);
+  margin: auto;
+  width: 70%;
+}
+
+.form__content {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary--color);
+  margin: auto;
+  width: 70%;
+  height: 300px;
+}
+
+.form__input__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__input {
+  all: unset;
+  margin: 0.5em;
+  text-align: center;
+}
+
+.form__button {
+  margin: 2em;
+  width: 100px;
+  font-size: 2rem;
+  align-self: center;
+  all: unset;
+  color: var(--feedButton--color);
+}
+
+.form__button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.form__description {
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.form__title {
+  text-align: center;
+  padding-bottom: 0.5em;
+  margin-bottom: 2em;
+  width: 100%;
+  font-weight: bold;
+  border-bottom: 1px solid var(--secondary--color);
+}
+
+.form__footer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 1em;
+}
+
+.modal__picture {
+  max-height: 100%;
+  max-width: 700px;
+  height: auto;
+  object-fit: contain;
+}
+
+.modal__info {
+  width: 100%;
+  max-height: 600px;
+  display: grid;
+  justify-items: flex-start;
+  grid-template-rows: auto 1fr;
+  box-sizing: border-box;
+}
+
+.modal__footer {
+  width: 100%;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  border-radius: 0;
+  border-top: 1px solid var(--secondary--color);
+}
+
+.modal__picture__container {
+  width: 100%;
+  border-radius: 0;
+  background-color: black;
+  padding: 5em 0;
+  max-height: 600px;
+}
+
+.modal__description {
+  display: inline;
+  font-weight: 200;
+}
+
+.modal__info__header {
+  display: flex;
+  border-bottom: 1px solid var(--secondary--color);
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 0 0.5em;
+}
+
+.modal__info__avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+
+.modal__comments {
+  background-color: var(--primary--color);
+  padding: 0 0.5em;
+  padding-top: 0.8em;
+  width: 100%;
+  overflow-y: auto;
+}
+.modal__comment {
+  display: flex;
+  align-items: center;
+  margin: 0.8em 0;
+}
+
+.modal__comment:first-child {
+  margin-top: 0;
+}
+
+.modal__timestamp {
+  font-weight: 100;
+  font-size: 0.7rem;
+  align-self: flex-end;
+  margin-left: 0.5em;
+}
+
+.modal__comment__text {
+  font-weight: 200;
+}
+
+.modal__input__container {
+  width: 100%;
+  display: flex;
+  border-radius: 0;
+  border-top: 1px solid var(--secondary--color);
+  align-items: center;
+}
+
+.modal__comment__button {
+  all: unset;
+  color: var(--feedButton--color);
+  padding: 0.5em;
+}
+
+.modal__comment__button:disabled {
+  opacity: 0.4;
+}
+
+.modal__input {
+  border: 0;
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+.modal__input:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .modal__picture {
+    max-width: 500px;
+  }
+
+  .modal__info {
+    max-width: 500px;
+  }
+  .modal__picture__container {
+    max-width: 500px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .modal__picture {
+    max-width: 400px;
+  }
+
+  .modal__info {
+    max-width: 400px;
+  }
+  .modal__picture__container {
+    max-width: 400px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .modal__picture__container {
+    display: none;
+  }
+
+  .modal__info {
+    height: 500px;
+  }
+
+  #modal__content {
+    grid-template-columns: 1fr;
+  }
+
+  .modal__footer {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .modal__info {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    max-width: 100%;
+  }
+  #modal__content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #modal {
+    padding: 0;
+  }
+}
