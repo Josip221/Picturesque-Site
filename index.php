@@ -35,7 +35,7 @@ if($parts[4] != "pzi_seminar" || !isset($parts[2]) || ($parts[5] != "post" && $p
 
 $id = $parts[6] ?? null;
 
-$database = new Database("localhost", "MareticJ", "MareticJ", "MareticJ_2022");
+$database = new Database("", "", "", "");
 
 switch($parts[5]) {
 	case "post": 
